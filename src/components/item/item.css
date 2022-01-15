@@ -1,0 +1,12 @@
+.col-lg-4 {
+  margin-bottom: 1em;
+}
+
+.card-body {
+  background-color: #dddddd;
+  color: #333333;
+}
+
+p#tag {
+  color: #964061;
+}
