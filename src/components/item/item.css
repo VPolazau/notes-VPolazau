@@ -3,10 +3,12 @@
 }
 
 .card-body {
-  background-color: #dddddd;
-  color: #333333;
+  background-color: #0021;
+  color: #2e616e;
 }
 
 p#tag {
   color: #964061;
+  max-width: 80%;
+  overflow: hidden;
 }

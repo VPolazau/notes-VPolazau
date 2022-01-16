@@ -4,6 +4,10 @@ import Item from '../item'
 import './item-list.css'
 
 const ItemList = () => {
+  const alertMod = () => {
+    console.log(123);
+  }
+
   return (
     <div>
       <div className="row">
@@ -11,11 +15,13 @@ const ItemList = () => {
         <Item />
         <Item />
       </div>
+
       <div className="row">
         <Item />
         <Item />
         <Item />
       </div>
+
       <div className="row">
         <Item />
         <Item />
