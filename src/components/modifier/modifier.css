@@ -1,0 +1,24 @@
+.form-floating > .form-control:focus,
+.form-floating > .form-control:not(:placeholder-shown) {
+  padding-top: 0.625rem !important;
+  padding-bottom: 0.625rem;
+  height: 150px;
+}
+
+div.modal-footer {
+  border-top: 0;
+  padding: 0;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.form-floating {
+  margin: 0.75rem;
+}
+
+div.tag-mod {
+  margin-top: 0;
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
