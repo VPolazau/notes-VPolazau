@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Footer from '../footer'
 import Header from '../header'
 import ItemList from '../item-list'

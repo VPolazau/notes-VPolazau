@@ -6,8 +6,4 @@ export default class Service{
   getData(){
     return this.data.notes
   }
-
-  // setData(){
-  //   this.data.note
-  // }
 }
