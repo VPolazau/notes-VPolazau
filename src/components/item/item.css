@@ -12,3 +12,8 @@ p#tag {
   max-width: 80%;
   overflow: hidden;
 }
+
+button.btn-close {
+  margin-left: 22.7rem;
+  padding-top: 0.5em;
+}

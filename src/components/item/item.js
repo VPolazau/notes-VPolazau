@@ -4,13 +4,13 @@ import './item.css'
 
 const Item = ({ text, tag }) => {
   return (
-      <div className="card">
-        <div className="card-body">
-          <button type="button" className="btn-close"></button>
-          <p className="card-text">{text}</p>
-          <p id="tag">{tag}</p>
-        </div>
+    <div className='card'>
+      <div className='card-body'>
+        <button type='button' className='btn-close'></button>
+        <p className='card-text'>{text}</p>
+        <p id='tag'>{tag}</p>
       </div>
+    </div>
   )
 }
 
