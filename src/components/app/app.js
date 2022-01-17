@@ -1,27 +1,43 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Footer from '../footer'
 import Header from '../header'
 import ItemList from '../item-list'
 import Modifier from '../modifier'
+import Service from '../../service/service'
 
 import 'bootswatch/dist/sketchy/bootstrap.css'
 
 import './app.css'
 
-const App = () => {
 
-  return (
-    <div className="container">
-      <Header />
+export default class App extends Component {
 
-      <Modifier />
-      <div className="content">
-        <ItemList />
+  service = new Service()
+  data = this.service.getData()
+
+  state={
+    data: this.data,
+    newItem: false,
+  }
+
+
+  render(){
+    const { data } = this.state;
+
+    return (
+      <div className="container">
+        <Header />
+  
+        <Modifier />
+        <div className="content">
+          <ItemList data={data}/>
+        </div>
+  
+        <Footer />
       </div>
+    )
+  }
 
-      <Footer />
-    </div>
-  )
+  
 }
 
-export default App
