@@ -5,15 +5,11 @@ import Item from '../item'
 import './item-list.css'
 
 export default class ItemList extends Component {
-  colomArr = []
   rowArr = []
   key = null
 
   service = new Service()
   data = this.service.getData()
-
-  // data[0].note.text = 12312312312
-  // console.log(data[0].note.text)
 
   itemsView = this.data.map(item => {
     const {
