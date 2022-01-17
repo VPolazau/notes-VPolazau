@@ -13,7 +13,7 @@ p#tag {
   overflow: hidden;
 }
 
-button.btn-close {
-  margin-left: 22.7rem;
-  padding-top: 0.5em;
+div.closeBtn {
+  display: flex;
+  justify-content: flex-end;
 }
