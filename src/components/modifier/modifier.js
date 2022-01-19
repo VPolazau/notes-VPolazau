@@ -24,7 +24,7 @@ const Modifier = ({ data, onCloseMod, saveNote, onChangeText }) => {
           <button
             type="button"
             className="btn btn-primary btn-save"
-            onClick={saveNote}
+            onClick={() => saveNote(data)}
           >
             Save
           </button>

@@ -20,13 +20,15 @@ export default class App extends Component {
   }
 
   newNote = () => {
-    this.setState(({data}) => {
+    this.setState(({ data }) => {
       const lastIdx = data.length
-      const _buff = {id: lastIdx, note: { text: 'Is being created...', tag: '' } }
-      const _bufForMod = {id: lastIdx, note: { text: '', tag: '' } }
-      console.log(_buff);
+      const _buff = {
+        id: lastIdx,
+        note: { text: 'Is being created...', tag: '' },
+      }
+      const _bufForMod = { id: lastIdx, note: { text: '', tag: '' } }
 
-      return { modView: true, data: [_buff, ...data], dataMod: _bufForMod}
+      return { modView: true, data: [_buff, ...data], dataMod: _bufForMod }
     })
   }
 
@@ -42,9 +44,14 @@ export default class App extends Component {
     })
   }
 
-  saveNote = () => {
-    const textNote = document.querySelector('textarea.text-note')
-    console.log(textNote.value)
+  saveNote = (newDataMod) => {
+    this.setState(({ data }) => {
+      const idx = data.findIndex((el) => el.id === newDataMod.id)
+
+      const newArray = [...data.slice(0, idx), newDataMod, ...data.slice(idx + 1)]
+
+      return {data: newArray, modView: false}
+    })
   }
 
   onCloseMod = () => {
