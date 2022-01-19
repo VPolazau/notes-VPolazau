@@ -2,12 +2,12 @@ import React from 'react'
 
 import './item.css'
 
-const Item = ({ note: { text, tag }, itemChanged, itemDeleted }) => {
+const Item = ({ note: { text, tag }, onDeleted }) => {
   return (
     <div className="card">
-      <div className="card-body" onClick={itemChanged}>
+      <div className="card-body">
         <div className="closeBtn">
-          <button type="button" className="btn" onClick={() => itemDeleted}>
+          <button type="button" className="btn" onClick={onDeleted}>
             X
           </button>
         </div>
