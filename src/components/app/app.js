@@ -15,12 +15,21 @@ export default class App extends Component {
 
   state = {
     data: this.data,
+    dataMod: null,
     modView: false,
   }
 
-  newNoteBtn = () => {
-    this.setState({modView: true})
-  } 
+  newNote = () => {
+    this.setState({ modView: true })
+  }
+
+  modNote = id => {
+    this.setState(({ data }) => {
+      const idx = data.findIndex(el => el.id === id)
+
+      return { modView: true, dataMod: data[idx] }
+    })
+  }
 
   deleteItem = id => {
     this.setState(({ data }) => {
@@ -33,17 +42,21 @@ export default class App extends Component {
   }
 
   render() {
-    const { data, modView } = this.state
+    const { data, modView, dataMod} = this.state
 
-    const modifier = modView ? <Modifier /> : null;
+    const modifier = modView ? <Modifier data={dataMod}/> : null
 
     return (
       <div className='container'>
-        <Header newNoteBtn={this.newNoteBtn}/>
+        <Header newNoteBtn={this.newNote} />
 
         {modifier}
         <div className='content'>
-          <ItemList data={data} onDeleted={this.deleteItem} />
+          <ItemList
+            data={data}
+            onDeleted={this.deleteItem}
+            onChanged={this.modNote}
+          />
         </div>
 
         <Footer />
