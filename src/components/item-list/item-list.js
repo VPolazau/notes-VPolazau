@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import Service from '../../service/service'
 import Item from '../item'
 
 import './item-list.css'

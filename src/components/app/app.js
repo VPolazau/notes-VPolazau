@@ -15,8 +15,12 @@ export default class App extends Component {
 
   state = {
     data: this.data,
-    newItem: false,
+    modView: false,
   }
+
+  newNoteBtn = () => {
+    this.setState({modView: true})
+  } 
 
   deleteItem = id => {
     this.setState(({ data }) => {
@@ -29,13 +33,15 @@ export default class App extends Component {
   }
 
   render() {
-    const { data } = this.state
+    const { data, modView } = this.state
+
+    const modifier = modView ? <Modifier /> : null;
 
     return (
       <div className='container'>
-        <Header />
+        <Header newNoteBtn={this.newNoteBtn}/>
 
-        <Modifier />
+        {modifier}
         <div className='content'>
           <ItemList data={data} onDeleted={this.deleteItem} />
         </div>
