@@ -20,20 +20,27 @@ export default class App extends Component {
   }
 
   newNote = () => {
-    this.setState({ modView: true })
+    this.setState(() => {
+      const _buff = { note: { text: '', tag: '' } }
+      return { modView: true, dataMod: _buff }
+    })
   }
 
-  modNote = id => {
+  onCloseMod = () => {
+    this.setState({modView: false})
+  }
+
+  modNote = (id) => {
     this.setState(({ data }) => {
-      const idx = data.findIndex(el => el.id === id)
+      const idx = data.findIndex((el) => el.id === id)
 
       return { modView: true, dataMod: data[idx] }
     })
   }
 
-  deleteItem = id => {
+  deleteItem = (id) => {
     this.setState(({ data }) => {
-      const idx = data.findIndex(el => el.id === id)
+      const idx = data.findIndex((el) => el.id === id)
 
       const newArray = [...data.slice(0, idx), ...data.slice(idx + 1)]
 
@@ -42,16 +49,16 @@ export default class App extends Component {
   }
 
   render() {
-    const { data, modView, dataMod} = this.state
+    const { data, modView, dataMod } = this.state
 
-    const modifier = modView ? <Modifier data={dataMod}/> : null
+    const modifier = modView ? <Modifier data={dataMod} onCloseMod={this.onCloseMod}/> : null
 
     return (
-      <div className='container'>
+      <div className="container">
         <Header newNoteBtn={this.newNote} />
 
         {modifier}
-        <div className='content'>
+        <div className="content">
           <ItemList
             data={data}
             onDeleted={this.deleteItem}

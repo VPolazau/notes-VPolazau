@@ -2,8 +2,10 @@ import React from 'react'
 
 import './modifier.css'
 
-const Modifier = ({data}) => {
-  const {id, note: {text, tag}} = data;
+const Modifier = ({ data, onCloseMod }) => {
+  const {
+    note: { text, tag },
+  } = data
   return (
     <div className="form-floating">
       <textarea className="form-control" value={text}></textarea>
@@ -12,13 +14,14 @@ const Modifier = ({data}) => {
         <div className="tag-mod">{tag}</div>
 
         <div className="btn-mod">
-          <button type="button" className="btn btn-primary">
+          <button type="button" className="btn btn-primary" >
             Save changes
           </button>
           <button
             type="button"
             className="btn btn-secondary"
             data-bs-dismiss="modal"
+            onClick={onCloseMod}
           >
             Close
           </button>
