@@ -4,19 +4,19 @@ import './item.css'
 
 const Item = ({ note: { text, tag }, onDeleted, onChanged }) => {
   return (
-    <a href='#top'>
-      <div className='card'>
-        <div className='card-body' onClick={onChanged}>
-          <div className='closeBtn'>
-            <button type='button' className='btn' onClick={onDeleted}>
-              X
-            </button>
-          </div>
-          <p className='card-text'>{text}</p>
-          <p id='tag'>{tag}</p>
+    <div className="card">
+      <div className="card-body">
+        <div className="closeBtn">
+          <button type="button" className="btn" onClick={onDeleted}>
+            X
+          </button>
         </div>
+        <a href="#top" className="note">
+          <p className="card-text" onClick={onChanged}>{text}</p>
+        </a>
+        <p id="tag">{tag}</p>
       </div>
-    </a>
+    </div>
   )
 }
 
