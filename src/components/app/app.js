@@ -20,9 +20,13 @@ export default class App extends Component {
   }
 
   newNote = () => {
-    this.setState(() => {
-      const _buff = { note: { text: '', tag: '' } }
-      return { modView: true, dataMod: _buff }
+    this.setState(({data}) => {
+      const lastIdx = data.length
+      const _buff = {id: lastIdx, note: { text: 'Is being created...', tag: '' } }
+      const _bufForMod = {id: lastIdx, note: { text: '', tag: '' } }
+      console.log(_buff);
+
+      return { modView: true, data: [_buff, ...data], dataMod: _bufForMod}
     })
   }
 
