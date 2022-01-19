@@ -22,3 +22,7 @@ div.tag-mod {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.btn-save {
+  margin-right: 0.5em;
+}

@@ -26,8 +26,25 @@ export default class App extends Component {
     })
   }
 
+  onChangeText = (id, event) => {
+    this.setState(({ data }) => {
+      const idx = data.findIndex((el) => el.id === id)
+      const newValue = {
+        id: id,
+        note: { text: event.target.value, tag: data[idx].note.tag },
+      }
+
+      return { dataMod: newValue }
+    })
+  }
+
+  saveNote = () => {
+    const textNote = document.querySelector('textarea.text-note')
+    console.log(textNote.value)
+  }
+
   onCloseMod = () => {
-    this.setState({modView: false})
+    this.setState({ modView: false })
   }
 
   modNote = (id) => {
@@ -51,7 +68,14 @@ export default class App extends Component {
   render() {
     const { data, modView, dataMod } = this.state
 
-    const modifier = modView ? <Modifier data={dataMod} onCloseMod={this.onCloseMod}/> : null
+    const modifier = modView ? (
+      <Modifier
+        data={dataMod}
+        onCloseMod={this.onCloseMod}
+        saveNote={this.saveNote}
+        onChangeText={this.onChangeText}
+      />
+    ) : null
 
     return (
       <div className="container">

@@ -2,20 +2,31 @@ import React from 'react'
 
 import './modifier.css'
 
-const Modifier = ({ data, onCloseMod }) => {
+const Modifier = ({ data, onCloseMod, saveNote, onChangeText }) => {
   const {
+    id,
     note: { text, tag },
   } = data
   return (
     <div className="form-floating">
-      <textarea className="form-control" value={text}></textarea>
+      <textarea
+        contentEditable="true"
+        suppressContentEditableWarning={true}
+        className="form-control text-note"
+        value={text}
+        onChange={(e) => onChangeText(id, e)}
+      ></textarea>
 
       <div className="modal-footer">
         <div className="tag-mod">{tag}</div>
 
         <div className="btn-mod">
-          <button type="button" className="btn btn-primary" >
-            Save changes
+          <button
+            type="button"
+            className="btn btn-primary btn-save"
+            onClick={saveNote}
+          >
+            Save
           </button>
           <button
             type="button"
