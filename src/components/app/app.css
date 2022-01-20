@@ -1,11 +1,11 @@
 body{
     background:
       linear-gradient(
-      rgb(73, 73, 73), transparent 0.4px
+      rgb(73, 73, 73), transparent 0.6px
       ),
       linear-gradient(
       90deg,
-      rgb(129, 129, 129), transparent 0.4px
+      rgb(129, 129, 129), transparent 0.6px
       );
     background-size: 30px 30px;
     background-position: center center;

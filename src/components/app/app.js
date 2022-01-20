@@ -68,6 +68,8 @@ export default class App extends Component {
         ...data.slice(idx + 1),
       ]
 
+      this.saveData(newArray)
+
       return { data: newArray, modView: false }
     })
   }
@@ -113,12 +115,8 @@ export default class App extends Component {
     })
   }
 
-  componentDidUpdate(){
-    this.saveData()
-  }
-
-  saveData = () => {
-    console.log(this.state.data);
+  saveData(data){
+    console.log(data);
   }
 
   render() {
