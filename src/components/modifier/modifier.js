@@ -1,15 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import './modifier.css'
 
-export default class Modifier extends Component {
-  state = {
-    visibleText: ''
-  }
-
-  render() {
-    const { data, onCloseMod, saveNote, onChangeText } = this.props
-
+const Modifier = ({ data, onCloseMod, saveNote, onChangeText }) => {
     const {
       id,
       note: { text, tag },
@@ -48,5 +41,6 @@ export default class Modifier extends Component {
         </div>
       </div>
     )
-  }
 }
+
+export default Modifier
