@@ -38,11 +38,17 @@ export default class App extends Component {
   }
 
   onChangeText = (id, event) => {
+    const { value } = event.target
+    const re = /\#([\w|а-я]*)/gm
+    const tags = value.match(re)
+    console.log(tags);
+
     this.setState(({ data }) => {
       const idx = data.findIndex(el => el.id === id)
+
       const newValue = {
         id: id,
-        note: { text: event.target.value, tag: data[idx].note.tag },
+        note: { text: value, tag: tags },
       }
 
       return { dataMod: newValue }
@@ -61,7 +67,6 @@ export default class App extends Component {
 
       return { data: newArray, modView: false }
     })
-    console.log(this.state.data)
   }
 
   onCloseMod = () => {
@@ -86,18 +91,20 @@ export default class App extends Component {
     })
   }
 
-  onSearchChange = (term) => {
-    this.setState({term})
+  onSearchChange = term => {
+    this.setState({ term })
   }
 
-  search(items, term){
-    if(term.length === 0){
+  search(items, term) {
+    if (term.length === 0) {
       return items
     }
     return items.filter(item => {
       return item.note.tag.indexOf(term) > -1
     })
   }
+
+
 
   render() {
     const { data, modView, dataMod, term } = this.state
