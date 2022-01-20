@@ -6,7 +6,7 @@ const Item = ({ note: { text, tag }, onDeleted, onChanged }) => {
   const _re = /[^#]*/gm
   const modText = text.match(_re).join('')
   const itemText =
-    modText.length > 50 ? `${modText.slice(0, 50)}...` : modText
+    modText.length > 45 ? `${modText.slice(0, 45)}...` : modText
 
   return (
     <div className='card'>

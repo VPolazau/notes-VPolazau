@@ -15,8 +15,10 @@ const Footer = () => {
               <a href="https://github.com/VPolazau/notes-VPolazau">GitHub</a>
             </li>
           </ul>
-          <p className='name'> Made by <a href='#'>Victor Polozov</a></p>
-          <p> January,  2022</p>
+          <p className="name">
+            Made by <ins>Victor Polozov</ins>
+          </p>
+          <p> January, 2022</p>
         </div>
       </div>
     </footer>
