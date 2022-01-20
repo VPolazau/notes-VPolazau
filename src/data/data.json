@@ -3,78 +3,22 @@
     {
       "id": "0",
       "note": {
-        "text": "000Some quick example text...",
-        "tag": "#qwerty#qwerty#qwerty"
+        "text": "I wonna go to #shop",
+        "tag": "#shop"
       }
     },
     {
       "id": "1",
       "note": {
-        "text": "111Some quick example text...",
-        "tag": "#qwerty#qwerty#qwerty"
+        "text": "#Call Victor",
+        "tag": "#call"
       }
     },
     {
       "id": "2",
       "note": {
-        "text": "222Some quick example text...",
-        "tag": "#qwerty#qwerty#qwerty"
-      }
-    },
-    {
-      "id": "3",
-      "note": {
-        "text": "333Some quick example text...",
-        "tag": "#qwerty#qwerty#qwerty"
-      }
-    },
-    {
-      "id": "4",
-      "note": {
-        "text": "444Some quick example text...",
-        "tag": "#qwerty#qwerty#qwerty"
-      }
-    },
-    {
-      "id": "5",
-      "note": {
-        "text": "555Some quick example text...",
-        "tag": "#qwerty#qwerty#qwerty"
-      }
-    },
-    {
-      "id": "6",
-      "note": {
-        "text": "666Some quick example text...",
-        "tag": "#qwerty#qwerty#qwerty"
-      }
-    },
-    {
-      "id": "7",
-      "note": {
-        "text": "777Some quick example text...",
-        "tag": "#qwerty#qwerty#qwerty"
-      }
-    },
-    {
-      "id": "8",
-      "note": {
-        "text": "888Some quick example text...",
-        "tag": "#qwerty#qwerty#qwerty"
-      }
-    },
-    {
-      "id": "9",
-      "note": {
-        "text": "999Some quick example text...",
-        "tag": "#qwerty#qwerty#qwerty"
-      }
-    },
-    {
-      "id": "10",
-      "note": {
-        "text": "101010Some quick example text...",
-        "tag": "#qwerty#qwerty#qwerty"
+        "text": "Don't forget to wash #car tomorrow",
+        "tag": "#car"
       }
     }
   ]
