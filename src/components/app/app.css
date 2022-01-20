@@ -1,5 +1,17 @@
 body{
-  background-color: #ecebcd;
+    background:
+      linear-gradient(
+      rgb(73, 73, 73), transparent 0.4px
+      ),
+      linear-gradient(
+      90deg,
+      rgb(129, 129, 129), transparent 0.4px
+      );
+    background-size: 30px 30px;
+    background-position: center center;
+    border: 2px solid rgb(100, 100, 100);
+    background-color: #ecebcd;
+  
 }
 
 .content{
