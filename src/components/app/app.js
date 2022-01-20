@@ -41,7 +41,6 @@ export default class App extends Component {
     const { value } = event.target
     const re = /\#([\w|а-я]*)/gm
     const tags = value.match(re)
-    console.log(tags);
 
     this.setState(({ data }) => {
       const idx = data.findIndex(el => el.id === id)
@@ -70,7 +69,13 @@ export default class App extends Component {
   }
 
   onCloseMod = () => {
-    this.setState({ modView: false })
+    this.setState(({ data }) => {
+      if (data[0].note.text === 'Is being created...') {
+        const oldData = [...data.slice(1)]
+        return { data: oldData,  modView: false }
+      }
+      return { modView: false }
+    })
   }
 
   modNote = id => {
@@ -103,8 +108,6 @@ export default class App extends Component {
       return item.note.tag.indexOf(term) > -1
     })
   }
-
-
 
   render() {
     const { data, modView, dataMod, term } = this.state
