@@ -29,10 +29,10 @@ export default class App extends Component {
       }
       const _bufForMod = { id: lastIdx, note: { text: '', tag: '' } }
 
-      if(data[0].note.text === 'Is being created...'){
+      if (data[0].note.text === 'Is being created...') {
         return {
           modView: false,
-          data: [...data.slice(1)]
+          data: [...data.slice(1)],
         }
       }
       return {
@@ -58,9 +58,9 @@ export default class App extends Component {
     })
   }
 
-  saveNote = newDataMod => {
+  saveNote = (newDataMod) => {
     this.setState(({ data }) => {
-      const idx = data.findIndex(el => el.id === newDataMod.id)
+      const idx = data.findIndex((el) => el.id === newDataMod.id)
 
       const newArray = [
         ...data.slice(0, idx),
@@ -84,17 +84,17 @@ export default class App extends Component {
     })
   }
 
-  modNote = id => {
+  modNote = (id) => {
     this.setState(({ data }) => {
-      const idx = data.findIndex(el => el.id === id)
+      const idx = data.findIndex((el) => el.id === id)
 
       return { modView: true, dataMod: data[idx] }
     })
   }
 
-  deleteItem = id => {
+  deleteItem = (id) => {
     this.setState(({ data }) => {
-      const idx = data.findIndex(el => el.id === id)
+      const idx = data.findIndex((el) => el.id === id)
 
       const newArray = [...data.slice(0, idx), ...data.slice(idx + 1)]
 
@@ -102,7 +102,7 @@ export default class App extends Component {
     })
   }
 
-  onSearchChange = term => {
+  onSearchChange = (term) => {
     this.setState({ term })
   }
 
@@ -110,13 +110,16 @@ export default class App extends Component {
     if (term.length === 0) {
       return items
     }
-    return items.filter(item => {
+    return items.filter((item) => {
       return item.note.tag.join('').indexOf(term) > -1
     })
   }
 
-  saveData(data){
-    console.log(data);
+  saveData = (data) => {
+    // const fs = require('fs')
+    // fs.writeFile('data.json', data, (err) => {
+    //   if (err) throw err
+    // })
   }
 
   render() {
@@ -134,14 +137,14 @@ export default class App extends Component {
     ) : null
 
     return (
-      <div className='container'>
+      <div className="container">
         <Header
           newNoteBtn={this.newNote}
           onSearchChange={this.onSearchChange}
         />
 
         {modifier}
-        <div className='content'>
+        <div className="content">
           <ItemList
             data={visibleNotes}
             onDeleted={this.deleteItem}
