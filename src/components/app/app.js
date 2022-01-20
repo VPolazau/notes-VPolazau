@@ -29,6 +29,12 @@ export default class App extends Component {
       }
       const _bufForMod = { id: lastIdx, note: { text: '', tag: '' } }
 
+      if(data[0].note.text === 'Is being created...'){
+        return {
+          modView: false,
+          data: [...data.slice(1)]
+        }
+      }
       return {
         modView: true,
         data: [_buff, ...data],
@@ -40,7 +46,7 @@ export default class App extends Component {
   onChangeText = (id, event) => {
     const { value } = event.target
     const _re = /\#([\w|а-я]*)/gm
-    const tags = value.match(_re)
+    const tags = value.toLowerCase().match(_re)
 
     this.setState(() => {
       const newValue = {
@@ -105,6 +111,14 @@ export default class App extends Component {
     return items.filter(item => {
       return item.note.tag.indexOf(term) > -1
     })
+  }
+
+  componentDidUpdate(){
+    this.saveData()
+  }
+
+  saveData = () => {
+    console.log(this.state.data);
   }
 
   render() {
