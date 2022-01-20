@@ -68,6 +68,7 @@ export default class App extends Component {
         ...data.slice(idx + 1),
       ]
 
+      // this.saveData(newArray, 'data.json', '../../data/data.json')
       this.saveData(newArray)
 
       return { data: newArray, modView: false }
@@ -116,8 +117,35 @@ export default class App extends Component {
   }
 
   saveData = (data) => {
+    const dataStr = JSON.stringify(data)
+    const _re = /[^#]*/gm
+    const dataStrSharp = `{"notes":${dataStr.match(_re).join('')}}`
+
+    var val = dataStr
+    if (dataStr === undefined) {
+      val = ''
+    }
+    const download = document.createElement('a')
+    download.href =
+      'data:text/plain;content-disposition=attachment;filename=file,' + dataStrSharp
+    download.download = 'data.json'
+    download.style.display = 'none'
+    download.id = 'download'
+    document.body.appendChild(download)
+    document.getElementById('download').click()
+    document.body.removeChild(download)
+
+    // 1ый способ не работает
+    //
+    // const a = document.getElementById("save");
+    // const file = new Blob([dataStr], {type: type});
+    // a.href = URL.createObjectURL(file);
+    // a.download = name;
+
+    // 2ой способ тоже не вышел
+    //
     // const fs = require('fs')
-    // fs.writeFile('data.json', data, (err) => {
+    // fs.writeFile('data.json', dataStr, (err) => {
     //   if (err) throw err
     // })
   }
