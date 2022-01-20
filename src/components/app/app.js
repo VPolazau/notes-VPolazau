@@ -15,6 +15,7 @@ export default class App extends Component {
 
   state = {
     data: this.data,
+    term: '',
     dataMod: null,
     modView: false,
   }
@@ -28,13 +29,17 @@ export default class App extends Component {
       }
       const _bufForMod = { id: lastIdx, note: { text: '', tag: '' } }
 
-      return { modView: true, data: [_buff, ...data], dataMod: _bufForMod }
+      return {
+        modView: true,
+        data: [_buff, ...data],
+        dataMod: _bufForMod,
+      }
     })
   }
 
   onChangeText = (id, event) => {
     this.setState(({ data }) => {
-      const idx = data.findIndex((el) => el.id === id)
+      const idx = data.findIndex(el => el.id === id)
       const newValue = {
         id: id,
         note: { text: event.target.value, tag: data[idx].note.tag },
@@ -44,31 +49,36 @@ export default class App extends Component {
     })
   }
 
-  saveNote = (newDataMod) => {
+  saveNote = newDataMod => {
     this.setState(({ data }) => {
-      const idx = data.findIndex((el) => el.id === newDataMod.id)
+      const idx = data.findIndex(el => el.id === newDataMod.id)
 
-      const newArray = [...data.slice(0, idx), newDataMod, ...data.slice(idx + 1)]
+      const newArray = [
+        ...data.slice(0, idx),
+        newDataMod,
+        ...data.slice(idx + 1),
+      ]
 
-      return {data: newArray, modView: false}
+      return { data: newArray, modView: false }
     })
+    console.log(this.state.data)
   }
 
   onCloseMod = () => {
     this.setState({ modView: false })
   }
 
-  modNote = (id) => {
+  modNote = id => {
     this.setState(({ data }) => {
-      const idx = data.findIndex((el) => el.id === id)
+      const idx = data.findIndex(el => el.id === id)
 
       return { modView: true, dataMod: data[idx] }
     })
   }
 
-  deleteItem = (id) => {
+  deleteItem = id => {
     this.setState(({ data }) => {
-      const idx = data.findIndex((el) => el.id === id)
+      const idx = data.findIndex(el => el.id === id)
 
       const newArray = [...data.slice(0, idx), ...data.slice(idx + 1)]
 
@@ -76,8 +86,23 @@ export default class App extends Component {
     })
   }
 
+  onSearchChange = (term) => {
+    this.setState({term})
+  }
+
+  search(items, term){
+    if(term.length === 0){
+      return items
+    }
+    return items.filter(item => {
+      return item.note.tag.indexOf(term) > -1
+    })
+  }
+
   render() {
-    const { data, modView, dataMod } = this.state
+    const { data, modView, dataMod, term } = this.state
+
+    const visibleNotes = this.search(data, term)
 
     const modifier = modView ? (
       <Modifier
@@ -89,13 +114,16 @@ export default class App extends Component {
     ) : null
 
     return (
-      <div className="container">
-        <Header newNoteBtn={this.newNote} />
+      <div className='container'>
+        <Header
+          newNoteBtn={this.newNote}
+          onSearchChange={this.onSearchChange}
+        />
 
         {modifier}
-        <div className="content">
+        <div className='content'>
           <ItemList
-            data={data}
+            data={visibleNotes}
             onDeleted={this.deleteItem}
             onChanged={this.modNote}
           />

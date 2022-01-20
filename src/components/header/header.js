@@ -3,7 +3,7 @@ import SearchPanel from '../search-panel'
 
 import './header.css'
 
-const Header = ({newNoteBtn}) => {
+const Header = ({newNoteBtn, onSearchChange}) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -13,7 +13,7 @@ const Header = ({newNoteBtn}) => {
            New note
         </button>
 
-        <SearchPanel />
+        <SearchPanel onSearchChange={onSearchChange}/>
       </div>
     </nav>
   )
