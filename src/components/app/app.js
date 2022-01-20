@@ -111,7 +111,7 @@ export default class App extends Component {
       return items
     }
     return items.filter(item => {
-      return item.note.tag.indexOf(term) > -1
+      return item.note.tag.join('').indexOf(term) > -1
     })
   }
 
