@@ -7,15 +7,6 @@ export default class Modifier extends Component {
     visibleText: ''
   }
 
-  // onClickText = text => {
-  //   this.setState(() => {
-  //     if (text.indexOf('#') > -1) {
-  //       const visibleText = text.split("#").join("")
-  //       return {visibleText}
-  //     }
-  //   })
-  // }
-
   render() {
     const { data, onCloseMod, saveNote, onChangeText } = this.props
 
@@ -31,7 +22,6 @@ export default class Modifier extends Component {
           suppressContentEditableWarning={true}
           className='form-control text-note'
           value={text}
-          // onClick={this.onClickText(text)}
           onChange={e => onChangeText(id, e)}
         ></textarea>
 

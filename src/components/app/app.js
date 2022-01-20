@@ -39,12 +39,10 @@ export default class App extends Component {
 
   onChangeText = (id, event) => {
     const { value } = event.target
-    const re = /\#([\w|а-я]*)/gm
-    const tags = value.match(re)
+    const _re = /\#([\w|а-я]*)/gm
+    const tags = value.match(_re)
 
-    this.setState(({ data }) => {
-      const idx = data.findIndex(el => el.id === id)
-
+    this.setState(() => {
       const newValue = {
         id: id,
         note: { text: value, tag: tags },
@@ -72,7 +70,7 @@ export default class App extends Component {
     this.setState(({ data }) => {
       if (data[0].note.text === 'Is being created...') {
         const oldData = [...data.slice(1)]
-        return { data: oldData,  modView: false }
+        return { data: oldData, modView: false }
       }
       return { modView: false }
     })
