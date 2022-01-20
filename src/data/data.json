@@ -1,28 +1,28 @@
 {
   "notes": [
     {
-      "id": "0",
+      "id": 0,
       "note": {
         "text": "I wonna go to #shop",
         "tag": ["#shop"]
       }
     },
     {
-      "id": "1",
+      "id": 1,
       "note": {
         "text": "#Call Victor",
         "tag": ["#call"]
       }
     },
     {
-      "id": "2",
+      "id": 2,
       "note": {
         "text": "Don't forget to wash #car tomorrow",
         "tag": ["#car"]
       }
     },
     {
-      "id": "3",
+      "id": 3,
       "note": {
         "text": "#Lorem ipsum dolor sit amet #consectetur adipisicing #elit. In illo vero repellat a voluptates consequatur tempore nihil eligendi molestiae amet reiciendis atque eveniet praesentium alias nisi, delectus iusto veritatis! Dolorum.",
         "tag": ["#lorem", "#consectetur", "#elit"]
