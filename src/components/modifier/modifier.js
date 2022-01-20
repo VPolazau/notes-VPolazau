@@ -23,6 +23,7 @@ const Modifier = ({ data, onCloseMod, saveNote, onChangeText }) => {
 
           <div className='btn-mod'>
             <button
+              id='save'
               type='button'
               className='btn btn-primary btn-save'
               onClick={() => saveNote(data)}
