@@ -3,78 +3,78 @@
     {
       "id": 0,
       "note": {
-        "text": "I wonna go to Ïshop",
-        "tag": ["Ïshop"]
+        "text": "I wonna go to #shop",
+        "tag": ["#shop"]
       }
     },
     {
       "id": 1,
       "note": {
-        "text": "ÏCall Victor",
-        "tag": ["Ïcall"]
+        "text": "#Call Victor",
+        "tag": ["#call"]
       }
     },
     {
       "id": 2,
       "note": {
-        "text": "Don't forget to wash Ïcar tomorrow",
-        "tag": ["Ïcar"]
+        "text": "Don't forget to wash #car tomorrow",
+        "tag": ["#car"]
       }
     },
     {
       "id": 3,
       "note": {
-        "text": "ÏLorem ipsum dolor sit amet consectetur adipisicing elit. In illo vero repellat a voluptates consequatur tempore nihil eligendi molestiae amet reiciendis atque eveniet praesentium alias nisi, delectus iusto veritatis! Dolorum.",
-        "tag": ["Ïlorem"]
+        "text": "#Lorem ipsum dolor sit amet consectetur adipisicing elit. In illo vero repellat a voluptates consequatur tempore nihil eligendi molestiae amet reiciendis atque eveniet praesentium alias nisi, delectus iusto veritatis! Dolorum.",
+        "tag": ["#lorem"]
       }
     },
     {
       "id": 4,
       "note": {
-        "text": "Lorem ipsum dolor sit amet Ïconsectetur adipisicing elit. In illo vero repellat a voluptates consequatur tempore nihil eligendi molestiae amet reiciendis atque eveniet praesentium alias nisi, delectus iusto veritatis! Dolorum.",
-        "tag": ["Ïconsectetur"]
+        "text": "Lorem ipsum dolor sit amet #consectetur adipisicing elit. In illo vero repellat a voluptates consequatur tempore nihil eligendi molestiae amet reiciendis atque eveniet praesentium alias nisi, delectus iusto veritatis! Dolorum.",
+        "tag": ["#consectetur"]
       }
     },
     {
       "id": 5,
       "note": {
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing Ïelit. In illo vero repellat a voluptates consequatur tempore nihil eligendi molestiae amet reiciendis atque eveniet praesentium alias nisi, delectus iusto veritatis! Dolorum.",
-        "tag": ["Ïelit"]
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing #elit. In illo vero repellat a voluptates consequatur tempore nihil eligendi molestiae amet reiciendis atque eveniet praesentium alias nisi, delectus iusto veritatis! Dolorum.",
+        "tag": ["#elit"]
       }
     },
     {
       "id": 6,
       "note": {
-        "text": "Lorem ipsum dolor sit amet consectetur Ïadipisicing elit. In illo vero repellat a voluptates consequatur tempore nihil eligendi molestiae amet reiciendis atque eveniet praesentium alias nisi, delectus iusto veritatis! Dolorum.",
-        "tag": ["Ïadipisicing"]
+        "text": "Lorem ipsum dolor sit amet consectetur #adipisicing elit. In illo vero repellat a voluptates consequatur tempore nihil eligendi molestiae amet reiciendis atque eveniet praesentium alias nisi, delectus iusto veritatis! Dolorum.",
+        "tag": ["#adipisicing"]
       }
     },
     {
       "id": 7,
       "note": {
-        "text": "Lorem ipsum dolor sit Ïamet consectetur adipisicing elit. In illo vero repellat a voluptates consequatur tempore nihil eligendi molestiae amet reiciendis atque eveniet praesentium alias nisi, delectus iusto veritatis! Dolorum.",
-        "tag": ["Ïamet"]
+        "text": "Lorem ipsum dolor sit #amet consectetur adipisicing elit. In illo vero repellat a voluptates consequatur tempore nihil eligendi molestiae amet reiciendis atque eveniet praesentium alias nisi, delectus iusto veritatis! Dolorum.",
+        "tag": ["#amet"]
       }
     },
     {
       "id": 8,
       "note": {
-        "text": "Lorem ipsum dolor Ïsit amet consectetur adipisicing elit. In illo vero repellat a voluptates consequatur tempore nihil eligendi molestiae amet reiciendis atque eveniet praesentium alias nisi, delectus iusto veritatis! Dolorum.",
-        "tag": ["Ïsit"]
+        "text": "Lorem ipsum dolor #sit amet consectetur adipisicing elit. In illo vero repellat a voluptates consequatur tempore nihil eligendi molestiae amet reiciendis atque eveniet praesentium alias nisi, delectus iusto veritatis! Dolorum.",
+        "tag": ["#sit"]
       }
     },
     {
       "id": 9,
       "note": {
-        "text": "Lorem ipsum Ïdolor sit amet consectetur adipisicing elit. In illo vero repellat a voluptates consequatur tempore nihil eligendi molestiae amet reiciendis atque eveniet praesentium alias nisi, delectus iusto veritatis! Dolorum.",
-        "tag": ["Ïdolor"]
+        "text": "Lorem ipsum #dolor sit amet consectetur adipisicing elit. In illo vero repellat a voluptates consequatur tempore nihil eligendi molestiae amet reiciendis atque eveniet praesentium alias nisi, delectus iusto veritatis! Dolorum.",
+        "tag": ["#dolor"]
       }
     },
     {
       "id": 10,
       "note": {
-        "text": "Lorem Ïipsum dolor sit amet consectetur adipisicing elit. In illo vero repellat a voluptates consequatur tempore nihil eligendi molestiae amet reiciendis atque eveniet praesentium alias nisi, delectus iusto veritatis! Dolorum.",
-        "tag": ["Ïipsum"]
+        "text": "Lorem #ipsum dolor sit amet consectetur adipisicing elit. In illo vero repellat a voluptates consequatur tempore nihil eligendi molestiae amet reiciendis atque eveniet praesentium alias nisi, delectus iusto veritatis! Dolorum.",
+        "tag": ["#ipsum"]
       }
     }
   ]
