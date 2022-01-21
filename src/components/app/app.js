@@ -22,12 +22,20 @@ export default class App extends Component {
 
   newNote = () => {
     this.setState(({ data }) => {
-      const lastIdx = data.length
+      const lastIdx = this.data.length
       const _buff = {
         id: lastIdx,
         note: { text: 'Is being created...', tag: '' },
       }
       const _bufForMod = { id: lastIdx, note: { text: '', tag: '' } }
+
+      if (data.length === 0) {
+        return {
+          modView: true,
+          data: [_buff],
+          dataMod: _bufForMod,
+        }
+      }
 
       if (data[0].note.text === 'Is being created...') {
         return {
@@ -119,7 +127,6 @@ export default class App extends Component {
     // const dataStr = JSON.stringify(data)
     // const _re = /\#/gm
     // const newDataStr = `{"notes":${dataStr.replace(_re, 'Ï')}}`
-
     // var val = dataStr
     // if (dataStr === undefined) {
     //   val = ''
